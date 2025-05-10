@@ -104,7 +104,7 @@ fo_script_interact_sepolia() {
     echo -e "${YELLOW}Log saved to $LOG_FILE${NC}"
 }
 
-fo_script_anvil() {
+fo_script_interact_anvil() {
     hea1 "Foundry Script - One of contract deployment"
     LOG_FILE="logs/deploy_create_avil.log"
     mkdir -p logs
@@ -147,7 +147,8 @@ fo_script_anvil_nochain() {
     echo -e "╚═╝  ╚═╝ ╚═╝  ╚═══╝   ╚═══╝   ╚═╝ ╚══════╝"
 
     CO1="forge script ${CONTRACT_PATH_SCRIPT} \
-        --out outz/"
+        --simulate \
+        --out outz/ "
 
     echo -e "${BLUE}Running: $CO1${NC}"
 
@@ -166,12 +167,7 @@ main_menu() {
     echo -e "${CYAN}┌──────────────────────────────────────────┐${NC}"
     echo -e "${CYAN}│${NC}       ${PURPLE}🔥 Foundry Launcher Menu 🔥 ${CYAN}${NC}"
     echo -e "${CYAN}├──────────────────────────────────────────┤${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}1)${NC} ${WHITE}Full Foundry + Slither Setup ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}2)${NC} ${WHITE}Foundry Only Setup {CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}3)${NC} ${WHITE}Run Forge Tests                                 ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}4)${NC} ${WHITE}Create Contract on ${BLUE}Holesky${WHITE}       ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}5)${NC} ${WHITE}Create Contract on ${BLUE}Sepolia${WHITE}       ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}6)${NC} ${WHITE}Create Contract on ${BLUE}Anvil${WHITE}       ${CYAN}${NC}"
+
     echo -e "${CYAN}│${NC}  ${GREEN}7)${NC} ${WHITE}Create Contract on ${BLUE}Anvil-NoChain${WHITE}       ${CYAN}${NC}"
     echo -e "${CYAN}│${NC}  ${GREEN}8)${NC} ${WHITE}Script Deploy on ${BLUE}Holesky${WHITE}         ${CYAN}${NC}"
     echo -e "${CYAN}│${NC}  ${GREEN}9)${NC} ${WHITE}Script Deploy on ${BLUE}Sepolia${WHITE}         ${CYAN}${NC}"
