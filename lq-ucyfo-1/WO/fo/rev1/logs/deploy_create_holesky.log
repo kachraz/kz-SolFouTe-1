@@ -1,0 +1,40 @@
+Compiling 2 files with Solc 0.8.28
+Solc 0.8.28 finished in 45.74ms
+Compiler run successful!
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0xd960606c3c748B5502De2a81756E63ad0E1480c5
+Transaction hash: 0x9743c845db7445f9ebcbe3059cfd93b342a1217cc28c277a41df8c3b407a02ca
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0xd960606c3c748B5502De2a81756E63ad0E1480c5` deployed on holesky
+Compiler version: 0.8.28
+Optimizations:    9999
+
+Submitting verification for [src/Counter.sol:Counter] 0xd960606c3c748B5502De2a81756E63ad0E1480c5.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/Counter.sol:Counter] 0xd960606c3c748B5502De2a81756E63ad0E1480c5.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/Counter.sol:Counter] 0xd960606c3c748B5502De2a81756E63ad0E1480c5.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (2 tries remaining)
+
+Submitting verification for [src/Counter.sol:Counter] 0xd960606c3c748B5502De2a81756E63ad0E1480c5.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (1 tries remaining)
+
+Submitting verification for [src/Counter.sol:Counter] 0xd960606c3c748B5502De2a81756E63ad0E1480c5.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (0 tries remaining)
+
+Submitting verification for [src/Counter.sol:Counter] 0xd960606c3c748B5502De2a81756E63ad0E1480c5.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `sjpjbx8dcixrcww1ifhjijq4kyggiid2c2mrmymbtuavb3bqf3`
+	URL: https://holesky.etherscan.io/address/0xd960606c3c748b5502de2a81756e63ad0e1480c5
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified

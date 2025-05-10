@@ -1,0 +1,51 @@
+Compiling 17 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.95s
+Compiler run successful!
+Script ran successfully.
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 17000
+
+Estimated gas price: 0.001569279 gwei
+
+Estimated total gas used for script: 183002
+
+Estimated amount required: 0.000000287181195558 ETH
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+##
+Start verification for (1) contracts
+Start verifying contract `0x94BF63ad6DE714ea6c6Fe63b4584a24a2bdba350` deployed on holesky
+Compiler version: 0.8.28
+Optimizations:    999
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x94BF63ad6DE714ea6c6Fe63b4584a24a2bdba350.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x94BF63ad6DE714ea6c6Fe63b4584a24a2bdba350.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `s8gxnyqfnmfmhnzglmj594afgs5wwazfabshhan6ken3mbmsn6`
+	URL: https://holesky.etherscan.io/address/0x94bf63ad6de714ea6c6fe63b4584a24a2bdba350
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
+All (1) contracts were verified!
+
+Transactions saved to: /workspaces/lq-ucyfo-1/WO/fo/s1fsu1/broadcast/Counter.s.sol/17000/run-latest.json
+
+Sensitive values saved to: /workspaces/lq-ucyfo-1/WO/fo/s1fsu1/cache/Counter.s.sol/17000/run-latest.json
+

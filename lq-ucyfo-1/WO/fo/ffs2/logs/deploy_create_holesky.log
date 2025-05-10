@@ -1,0 +1,30 @@
+Compiling 4 files with Solc 0.8.19
+Solc 0.8.19 finished in 142.89ms
+Compiler run successful!
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0
+Transaction hash: 0x4ea676e7ba638f4e809a7a8210e11fb43a5f094bb0810d96f97c083d37766445
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0` deployed on holesky
+Compiler version: 0.8.19
+Optimizations:    999
+Constructor args: 000000000000000000000000694aa1769357215de4fac081bf1f309adc325306
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (2 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (1 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (0 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x18416E4955BDEb66aa9f55e3e58AD2D27584C0E0.
+Error: Etherscan could not detect the deployment.

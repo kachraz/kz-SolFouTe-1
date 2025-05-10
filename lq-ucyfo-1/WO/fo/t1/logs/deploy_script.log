@@ -1,0 +1,26 @@
+No files changed, compilation skipped
+Script ran successfully.
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 17000
+
+Estimated gas price: 0.002095526 gwei
+
+Estimated total gas used for script: 203856
+
+Estimated amount required: 0.000000427185548256 ETH
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /workspaces/lq-ucyfo-1/WO/fo/t1/broadcast/Counter.s.sol/17000/run-latest.json
+
+Sensitive values saved to: /workspaces/lq-ucyfo-1/WO/fo/t1/cache/Counter.s.sol/17000/run-latest.json
+

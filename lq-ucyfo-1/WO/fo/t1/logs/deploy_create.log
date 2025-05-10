@@ -1,0 +1,28 @@
+No files changed, compilation skipped
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0xb0699d871c2310485140Efecc01BC95eD283C608
+Transaction hash: 0x2156d900f6c3a490fe326ca9eaf17efbfc89a3516d087e794e768d6d1ac511a7
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0xb0699d871c2310485140Efecc01BC95eD283C608` deployed on holesky
+Compiler version: 0.8.28
+
+Submitting verification for [src/Counter.sol:Counter] 0xb0699d871c2310485140Efecc01BC95eD283C608.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/Counter.sol:Counter] 0xb0699d871c2310485140Efecc01BC95eD283C608.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/Counter.sol:Counter] 0xb0699d871c2310485140Efecc01BC95eD283C608.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `qy5tktb7dljftbz8hvdv5zblyc7xvwqvk539aeewvkfhpnbj9h`
+	URL: https://holesky.etherscan.io/address/0xb0699d871c2310485140efecc01bc95ed283c608
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `NOTOK`
+Details: `Already Verified`
+Contract source code already verified

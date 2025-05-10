@@ -1,0 +1,27 @@
+No files changed, compilation skipped
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0xa3AE6cDcF57E08437B17Ce5C8E53232cc4C876Fc
+Transaction hash: 0x2b32214e6f6db03da44d62c967501a314390e5fd3adbb436b2dfabb385a74d7c
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0xa3AE6cDcF57E08437B17Ce5C8E53232cc4C876Fc` deployed on sepolia
+Compiler version: 0.8.28
+Optimizations:    999
+Constructor args: 00000000000000000000003537bc2d8938fa69a3ea341249144e6ce296d8a14a
+
+Submitting verification for [src/BootySniff.sol:BootyToken] 0xa3AE6cDcF57E08437B17Ce5C8E53232cc4C876Fc.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/BootySniff.sol:BootyToken] 0xa3AE6cDcF57E08437B17Ce5C8E53232cc4C876Fc.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `ruteci6ybmwfncbynxcsqyijbytm9mm3cp2j6bmds87hpb2ca3`
+	URL: https://sepolia.etherscan.io/address/0xa3ae6cdcf57e08437b17ce5c8e53232cc4c876fc
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified

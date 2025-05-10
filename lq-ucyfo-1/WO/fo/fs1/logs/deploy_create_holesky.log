@@ -1,0 +1,38 @@
+No files changed, compilation skipped
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0
+Transaction hash: 0x682034c1229c5c77d77714b2479209e91546de3cb59ef40e1f196370c21385c6
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0` deployed on holesky
+Compiler version: 0.8.28
+Optimizations:    999
+
+Submitting verification for [src/SimpleStorage.sol:SimpleStorage] 0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/SimpleStorage.sol:SimpleStorage] 0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/SimpleStorage.sol:SimpleStorage] 0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (2 tries remaining)
+
+Submitting verification for [src/SimpleStorage.sol:SimpleStorage] 0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (1 tries remaining)
+
+Submitting verification for [src/SimpleStorage.sol:SimpleStorage] 0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (0 tries remaining)
+
+Submitting verification for [src/SimpleStorage.sol:SimpleStorage] 0x3b7d1d86D7028750A26DBdd0449Dd1790FF5c6d0.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `jvs9jjf1mdb8dvzxli6ff2scwphstchyj4rkumpfyhjfe8xhmj`
+	URL: https://holesky.etherscan.io/address/0x3b7d1d86d7028750a26dbdd0449dd1790ff5c6d0
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `NOTOK`
+Details: `Already Verified`
+Contract source code already verified

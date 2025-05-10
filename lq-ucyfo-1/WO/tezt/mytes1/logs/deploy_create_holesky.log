@@ -1,0 +1,32 @@
+Compiling 1 files with Solc 0.8.28
+Solc 0.8.28 finished in 380.80ms
+Compiler run successful!
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0x321354d7A6046A2Afd604AEb130475a819c6c11D
+Transaction hash: 0x7701f551421375759ee0d083443d9e5f080e073069e6343da7453f76dbd69eb7
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0x321354d7A6046A2Afd604AEb130475a819c6c11D` deployed on holesky
+Compiler version: 0.8.28
+Optimizations:    999
+Constructor args: 0000000000000000000a70c3c40a64e6c51999090b65f67d9240000000000000
+
+Submitting verification for [src/BootySniff.sol:BootyToken] 0x321354d7A6046A2Afd604AEb130475a819c6c11D.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/BootySniff.sol:BootyToken] 0x321354d7A6046A2Afd604AEb130475a819c6c11D.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/BootySniff.sol:BootyToken] 0x321354d7A6046A2Afd604AEb130475a819c6c11D.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `hmj7zpybgwutlcmrdhnhacyekwhysg6c9ptdwubdj6usbstbgn`
+	URL: https://holesky.etherscan.io/address/0x321354d7a6046a2afd604aeb130475a819c6c11d
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
