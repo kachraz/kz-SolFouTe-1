@@ -145,8 +145,8 @@ cast_wallet_van_ends_with() {
 cast_wallet_van_start_end_with() {
     hea1 "Create Wallets Using cast and menmonic"
 
-    startsWith="6666"
-    endsWith="9999"
+    startsWith="a"
+    endsWith="9"
 
     # Get name of Project
     echo -e "Enter Number Of Wallets to create with cast starting with ${startsWith} and endswith ${endsWith}"
