@@ -31,7 +31,7 @@ foset() {
     fi
 
     # Commands to execute
-    CO1="forge init --no-commit --no-git --force --vscode $name_of_project && cd $name_of_project "
+    CO1="forge init --no-git --force --vscode $name_of_project && cd $name_of_project "
     CO2="uv venv && source venv/bin/activate.fish"
     CO3="uv pip install slither-analyzer"
     CO4="solc-select install 0.8.13 && solc-select use 0.8.13"
@@ -56,7 +56,7 @@ fo_only() {
     fi
 
     # Commands to execute
-    CO1="forge init --no-commit --no-git --force --vscode $name_of_project && cd $name_of_project "
+    CO1="forge init --no-git --force --vscode $name_of_project && cd $name_of_project "
 
     # Execution Commands
     eval "$CO1"

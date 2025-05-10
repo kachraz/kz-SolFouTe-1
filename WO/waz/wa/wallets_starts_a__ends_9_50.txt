@@ -1,9 +1,4 @@
 
-Starting to generate vanity address...
-Successfully found vanity address in 0.004 seconds.
-Address: 0xAEcb6c012fa8E3947E8Ee76F4a4e06cC1410B6c9
-Private Key: 0x425efe93a001f2a36fc824dc0418ccf9265c6373d64f57f6a06f1eb9751cef38
-----------------------------------------
 
 Starting to generate vanity address...
 Successfully found vanity address in 0.004 seconds.
