@@ -136,7 +136,7 @@ fo_script_interact_anvil() {
 
 fo_script_anvil_simulate() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/deploy_create_avil.log"
+    LOG_FILE="logs/anvil_simulate_avil.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
