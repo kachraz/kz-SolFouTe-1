@@ -28,13 +28,19 @@ sudo apt install -y fish
 
 # ----------------------
 # Install Homebrew (Linuxbrew)
+# Run as a non-interactive, unattended Homebrew install
+export NONINTERACTIVE=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Add Homebrew to PATH
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+# Add Homebrew to PATH in .bashrc if not already there
+if ! grep -q "brew shellenv" ~/.bashrc; then
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.bashrc
+fi
+
+# Load the PATH now
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# Verify brew is working
+# Verify installation
 brew --version
 
 # ----------------------
