@@ -28,14 +28,11 @@ import "../src/Counter.sol"; // Or wherever your Counter contract is located
 
 contract CounterInteractor is Script {
     function run() public {
-        // Load private key from environment or use an impersonated account
-        uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
-
         // Start broadcasting transactions from the signer
-        vm.startBroadcast(deployerPrivateKey);
+        vm.startBroadcast();
 
         // Replace this with your actual deployed contract address
-        address counterAddress = 0xAbcdef1234567890123456789012345678901234;
+        address counterAddress = 0x6EFb288e47fE258B055E82E319179338c12D5347;
 
         Counter counter = Counter(counterAddress);
 
@@ -44,7 +41,7 @@ contract CounterInteractor is Script {
 
         // Set number
         counter.setNumber(100);
-        console.log("Set number to 100");
+        console.log("Set number to 69");
 
         // Increment
         counter.increment();
