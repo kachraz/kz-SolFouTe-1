@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import {SucknFuck} from "./ban1.sol";
+import {SucknFuck} from "../ban1.sol";
 
 contract SmellPanty {
     function displayMessage() public pure {

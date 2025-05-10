@@ -227,7 +227,7 @@ fo_create_anvil_nochain() {
 ################################################
 
 # Common Variables
-CONTRACT_PATH_SCRIPT="script/Counter.s.sol:GaandSmells"
+CONTRACT_PATH_SCRIPT="script/Counter.s.sol:CounterScript"
 
 fo_script_holeksy() {
     hea1 "Foundry Script - One of contract deployment"
