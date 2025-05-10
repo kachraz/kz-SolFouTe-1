@@ -43,7 +43,7 @@ ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 # Forge interact
 ################################################
 
-CONTRACT_PATH_SCRIPT="src/Counter.sol:Counter"
+CONTRACT_PATH_SCRIPT="script/Counter.s.sol:CounterInteractor"
 
 fo_script_interact_holeksy() {
     hea1 "Forge script interact with contract"
