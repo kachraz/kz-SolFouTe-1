@@ -1,0 +1,32 @@
+No files changed, compilation skipped
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0x1E70089ccDf57818BD7f4A6B80b144403Ff99072
+Transaction hash: 0x13c2f908a1e53dd4deb503a5a0be2ad20d11a78ae930669bb0558f85a9371663
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0x1E70089ccDf57818BD7f4A6B80b144403Ff99072` deployed on sepolia
+Compiler version: 0.8.28
+Optimizations:    999
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x1E70089ccDf57818BD7f4A6B80b144403Ff99072.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x1E70089ccDf57818BD7f4A6B80b144403Ff99072.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x1E70089ccDf57818BD7f4A6B80b144403Ff99072.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (2 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x1E70089ccDf57818BD7f4A6B80b144403Ff99072.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `9pdvuqyyfmipjibpvuypwtbsztidgbuvjhgrv1dw2knpszzzzt`
+	URL: https://sepolia.etherscan.io/address/0x1e70089ccdf57818bd7f4a6b80b144403ff99072
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified

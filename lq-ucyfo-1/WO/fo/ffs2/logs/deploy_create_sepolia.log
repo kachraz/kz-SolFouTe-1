@@ -1,0 +1,38 @@
+Compiling 4 files with Solc 0.8.19
+Solc 0.8.19 finished in 99.65ms
+Compiler run successful!
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0x05B5Af90018fcfE56302dbF554f54BF780A7C298
+Transaction hash: 0x4ef1612b3943f1cfde5302460e1b624ef43dd9bb2b9a7a1e0929f6996e1f997f
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0x05B5Af90018fcfE56302dbF554f54BF780A7C298` deployed on sepolia
+Compiler version: 0.8.19
+Optimizations:    999
+Constructor args: 000000000000000000000000694aa1769357215de4fac081bf1f309adc325306
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x05B5Af90018fcfE56302dbF554f54BF780A7C298.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x05B5Af90018fcfE56302dbF554f54BF780A7C298.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x05B5Af90018fcfE56302dbF554f54BF780A7C298.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (2 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x05B5Af90018fcfE56302dbF554f54BF780A7C298.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (1 tries remaining)
+
+Submitting verification for [src/FundMe.sol:FundMe] 0x05B5Af90018fcfE56302dbF554f54BF780A7C298.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `witaxcnt6zihirbgbxsibd8bzal6ntlgqeuym4xqd36drqb3dy`
+	URL: https://sepolia.etherscan.io/address/0x05b5af90018fcfe56302dbf554f54bf780a7c298
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified

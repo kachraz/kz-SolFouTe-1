@@ -1,0 +1,37 @@
+Compiling 1 files with Solc 0.8.28
+Solc 0.8.28 finished in 21.66ms
+Compiler run successful!
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0x90be9127fAef0cD2F079bcE0Fb8bfEF5Ab44Ec4E
+Transaction hash: 0xa7c61c052605cd6370a2a9858c0edaf55f23b87bfa965656c64410626419bd59
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0x90be9127fAef0cD2F079bcE0Fb8bfEF5Ab44Ec4E` deployed on holesky
+Compiler version: 0.8.28
+Optimizations:    999
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x90be9127fAef0cD2F079bcE0Fb8bfEF5Ab44Ec4E.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x90be9127fAef0cD2F079bcE0Fb8bfEF5Ab44Ec4E.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (3 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x90be9127fAef0cD2F079bcE0Fb8bfEF5Ab44Ec4E.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (2 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x90be9127fAef0cD2F079bcE0Fb8bfEF5Ab44Ec4E.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (1 tries remaining)
+
+Submitting verification for [src/Counter.sol:PantyPiss] 0x90be9127fAef0cD2F079bcE0Fb8bfEF5Ab44Ec4E.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `fllju8areix5433gayv5q8si9pnlkta5hif9am4zeqmcjbppbq`
+	URL: https://holesky.etherscan.io/address/0x90be9127faef0cd2f079bce0fb8bfef5ab44ec4e
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified

@@ -1,0 +1,26 @@
+No files changed, compilation skipped
+Deployer: 0x420A8Fe13265Df3B9323C3D7681b2854B1309338
+Deployed to: 0xDb441F74E8B7307220823e228659415fFB7A59aa
+Transaction hash: 0xeaae0d882631f24bde59381aeafcfa0661bbb666193fdc5b036e0a8e3626d0f5
+Starting contract verification...
+Waiting for sourcify to detect contract deployment...
+Start verifying contract `0xDb441F74E8B7307220823e228659415fFB7A59aa` deployed on holesky
+Compiler version: 0.8.28
+Optimizations:    999
+
+Submitting verification for [src/Counter.sol:Panty] 0xDb441F74E8B7307220823e228659415fFB7A59aa.
+Warning: Etherscan could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/Counter.sol:Panty] 0xDb441F74E8B7307220823e228659415fFB7A59aa.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `rdyetzpwpemlanxupcivxsx85ftcnznrzsew7gbe7junvv5jwf`
+	URL: https://holesky.etherscan.io/address/0xdb441f74e8b7307220823e228659415ffb7a59aa
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified

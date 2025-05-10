@@ -1,0 +1,7 @@
+Start verifying contract `0x3Cb25c2D6EED78Cb4CB124399B4A2DCB141F7034` deployed on zksync-testnet
+Optimizations:    1000000
+
+Submitting verification for [src/SimpleStorage.sol:SmellPanty] at address 0x3Cb25c2D6EED78Cb4CB124399B4A2DCB141F7034.
+Verification submitted successfully. Verification ID: 39334
+Checking verification status for ID: 39334 using verifier: zksync at URL: https://explorer.sepolia.era.zksync.dev/contract_verification
+Verification was successful.
