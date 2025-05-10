@@ -21,7 +21,20 @@ hea1() {
 }
 
 cwb() {
-    hea1 "Balance Checker"
+    # Define Colors
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    NC='\033[0m' # No Color
+
+    local script_name="Balance Checker"
+    echo -e "${GREEN}${script_name}${NC}"
+
+    # Generate timestamped log file
+    local log_file="wallet_balance_$(date +%Y-%m-%d).log"
+
+    # Truncate or create the log file
+    >"$log_file"
 
     # --- Configuration ---
     # Wallet Addresses
@@ -31,61 +44,78 @@ cwb() {
 
     # Network Configurations (Format: "NetworkName:RPC_URL")
     local -a networks=(
-        "Sepolia:https://eth-sepolia.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx"
-        "Holesky:https://eth-holesky.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx"
+        "Sepolia:https://eth-sepolia.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx "
+        "Holesky:https://eth-holesky.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx "
     )
     # --- End Configuration ---
 
     # Check for 'cast' command dependency
     if ! command -v cast &>/dev/null; then
-        echo -e "${RED}Error: 'cast' command not found. Please install Foundry (https://getfoundry.sh).${NC}"
-        return 1 # Use return instead of exit for functions
+        local error_msg="${RED}Error: 'cast' command not found. Please install Foundry (https://getfoundry.sh ).${NC}"
+        echo -e "$error_msg"
+        echo "$error_msg" >>"$log_file"
+        return 1
     fi
 
     local overall_status=0 # 0 = success, 1 = failure occurred
 
     # Loop through each wallet
     for wallet_address in "${wallets[@]}"; do
-        echo -e "--- Checking Wallet: ${YELLOW}${wallet_address}${NC} ---"
+        local header="--- Checking Wallet: ${wallet_address} ---"
+        echo -e "$header"
+        echo "$header" >>"$log_file"
 
         # Loop through each network for the current wallet
         for network_info in "${networks[@]}"; do
             # Split network info into name and URL
             IFS=':' read -r network_name rpc_url <<<"$network_info"
 
+            local status_line="Checking ${network_name}..."
+            echo -e "$status_line"
+            echo "$status_line" >>"$log_file"
+
             local balance_output
             local exit_code
 
-            # Construct and execute the command directly
-            # Using 'cast balance --ether' (or 'cast b -e') to get balance in Ether
-            # Capture stderr along with stdout to see potential errors from cast/RPC
-            echo "Checking ${network_name}..."
+            # Execute the cast command
             balance_output=$(cast balance --ether "${wallet_address}" --rpc-url "${rpc_url}" 2>&1)
             exit_code=$?
 
             if [ $exit_code -ne 0 ]; then
-                # Report error but continue checking other networks/wallets
-                echo -e "${RED}Error:${NC} Failed to get ${network_name} balance."
-                echo -e "${RED}Details:${NC} ${balance_output}" # Show the error message from cast
-                overall_status=1                                # Mark that at least one failure occurred
+                # Log error
+                local error_msg="${RED}Error:${NC} Failed to get ${network_name} balance."
+                local detail_msg="${RED}Details:${NC} ${balance_output}"
+                echo -e "$error_msg"
+                echo -e "$detail_msg"
+                echo "$error_msg" >>"$log_file"
+                echo "$detail_msg" >>"$log_file"
+                overall_status=1
             else
-                # Report success
-                echo -e "${GREEN}${network_name} Balance:${NC} ${balance_output} ETH"
+                # Success
+                local success_msg="${GREEN}${network_name} Balance:${NC} ${balance_output} ETH"
+                echo -e "$success_msg"
+                echo "$success_msg" >>"$log_file"
             fi
         done
-        echo "-------------------------------------------------------"
+
+        local divider="-------------------------------------------------------"
+        echo "$divider"
+        echo "$divider" >>"$log_file"
     done
 
     # Final status report
     if [ $overall_status -ne 0 ]; then
-        echo -e "${YELLOW}Balance Check Completed with errors.${NC}"
-        return 1 # Indicate failure
+        local final_msg="${YELLOW}Balance Check Completed with errors.${NC}"
+        echo -e "$final_msg"
+        echo "$final_msg" >>"$log_file"
+        return 1
     else
-        echo -e "${GREEN}Balance Check Completed Successfully.${NC}"
-        return 0 # Indicate success
+        local final_msg="${GREEN}Balance Check Completed Successfully.${NC}"
+        echo -e "$final_msg"
+        echo "$final_msg" >>"$log_file"
+        return 0
     fi
 }
-
 # Sending function
 
 cas() {
