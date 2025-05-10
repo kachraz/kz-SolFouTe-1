@@ -1,13 +1,26 @@
 #!/bin/bash
 
-# Extract Address and Private Key using grep and awk
-address=$(echo "$output" | grep '^Address:' | awk '{print $2}')
-private_key=$(echo "$output" | grep '^Private Key:' | awk '{print $3}')
+# Input file
+input_file="wc.txt"
 
-# Save to files
-echo "$address" >addy.txt
-echo "$private_key" >pk.txt
+# Output files
+address_file="addy.txt"
+private_key_file="pk.txt"
 
-# Optional: Print confirmation
-echo "Address saved to: $(pwd)/addy.txt"
-echo "Private key saved to: $(pwd)/pk.txt"
+# Clear or create the output files
+>"$address_file"
+>"$private_key_file"
+
+# Read the input file line by line
+while IFS= read -r line; do
+    if [[ "$line" == Address:* ]]; then
+        # Extract address and append to addy.txt
+        echo "$line" | awk '{print $2}' >>"$address_file"
+    elif [[ "$line" == "Private Key:"* ]]; then
+        # Extract private key and append to pk.txt
+        echo "$line" | awk '{print $3}' >>"$private_key_file"
+    fi
+done <"$input_file"
+
+echo "✅ Addresses extracted to: $(pwd)/$address_file"
+echo "✅ Private keys extracted to: $(pwd)/$private_key_file"
