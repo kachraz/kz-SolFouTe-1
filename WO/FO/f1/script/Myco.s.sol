@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Script, console} from "forge-std/Script.sol";
 import {SmellPanty} from "../src/Myco.sol";
 
-contract PantyScript is Script {
+contract GaandSmells is Script {
     SmellPanty public smellpanty;
 
     function setUp() public {}
