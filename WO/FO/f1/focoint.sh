@@ -83,156 +83,16 @@ accz=(
 )
 ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 
-# Testing
-fo_test() {
-    hea1 "Foundry Run"
-    CO1="forge test"
-    eval "$CO1"
-}
-
 ###############################################
-# Forge Create
+# Forge interact
 ################################################
+
 CONTRACT_PATH_CREATE="src/Counter.sol:Counter"
-Sepolia_DataFeed="0x694AA1769357215DE4FAC081bf1f309aDC325306"
 
-fo_create_holeksy() {
-    hea1 "Foundry Create - One of contract deployment"
+fo_script_interact_holeksy() {
+    hea1 "Forge script interact with contract"
 
-    LOG_FILE="logs/deploy_create_holesky.log"
-    TOKEN_AMT="1000000000000000000000"
-    mkdir -p logs
-
-    echo -e "██╗  ██╗  ██████╗  ██╗      ███████╗ ███████╗ ██╗  ██╗ ██╗   ██╗"
-    echo -e "██║  ██║ ██╔═══██╗ ██║      ██╔════╝ ██╔════╝ ██║ ██╔╝ ╚██╗ ██╔╝"
-    echo -e "███████║ ██║   ██║ ██║      █████╗   ███████╗ █████╔╝   ╚████╔╝ "
-    echo -e "██╔══██║ ██║   ██║ ██║      ██╔══╝   ╚════██║ ██╔═██╗    ╚██╔╝  "
-    echo -e "██║  ██║ ╚██████╔╝ ███████╗ ███████╗ ███████║ ██║  ██╗    ██║   "
-    echo -e "╚═╝  ╚═╝  ╚═════╝  ╚══════╝ ╚══════╝ ╚══════╝ ╚═╝  ╚═╝    ╚═╝   "
-
-    CO1="forge create ${CONTRACT_PATH_CREATE}  \
-        --rpc-url ${rpcz[1]} \
-        --private-key ${keyz[0]} \
-        --etherscan-api-key ${ETHERSCAN_API_KEY} \
-        --optimize true \
-        --optimizer-runs 999\
-        --build-info --build-info-path outz/ \
-        --verify --broadcast \
-        --out outz/ \
-        --constructor-args ${Sepolia_DataFeed} \
-        -vvvv"
-
-    echo -e "${BLUE}Running: $CO1${NC}"
-
-    # Run and log to file
-    eval "$CO1" 2>&1 | tee "$LOG_FILE"
-
-    echo -e "${GREEN}Successfully deployed contract${NC}"
-    echo -e "${YELLOW}Log saved to $LOG_FILE${NC}"
-}
-
-fo_create_sepolia() {
-    hea1 "Foundry Create - One of contract deployment"
-
-    LOG_FILE="logs/deploy_create_sepolia.log"
-
-    mkdir -p logs
-
-    echo -e "███████╗ ███████╗ ██████╗   ██████╗  ██╗      ██╗  █████╗ "
-    echo -e "██╔════╝ ██╔════╝ ██╔══██╗ ██╔═══██╗ ██║      ██║ ██╔══██╗"
-    echo -e "███████╗ █████╗   ██████╔╝ ██║   ██║ ██║      ██║ ███████║"
-    echo -e "╚════██║ ██╔══╝   ██╔═══╝  ██║   ██║ ██║      ██║ ██╔══██║"
-    echo -e "███████║ ███████╗ ██║      ╚██████╔╝ ███████╗ ██║ ██║  ██║"
-    echo -e "╚══════╝ ╚══════╝ ╚═╝       ╚═════╝  ╚══════╝ ╚═╝ ╚═╝  ╚═╝"
-
-    CO1="forge create ${CONTRACT_PATH_CREATE} \
-        --rpc-url ${rpcz[0]} \
-        --private-key ${keyz[0]} \
-        --optimize true \
-        --optimizer-runs 999\
-        --build-info --build-info-path outz/ \
-        --etherscan-api-key ${ETHERSCAN_API_KEY} \
-        --verify --broadcast \
-        --out outz/ \
-        --constructor-args ${Sepolia_DataFeed} \
-        -vvvvv"
-
-    echo -e "${BLUE}Running: $CO1${NC}"
-
-    # Run and log to file
-    eval "$CO1" 2>&1 | tee "$LOG_FILE"
-
-    echo -e "${GREEN}Successfully deployed contract${NC}"
-    echo -e "${YELLOW}Log saved to $LOG_FILE${NC}"
-}
-
-fo_create_anvil() {
-    hea1 "Foundry Create - One of contract deployment"
-
-    LOG_FILE="logs/deploy_create_avil.log"
-    mkdir -p logs
-
-    echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
-    echo -e "██╔══██╗ ████╗  ██║ ██║   ██║ ██║ ██║     "
-    echo -e "███████║ ██╔██╗ ██║ ██║   ██║ ██║ ██║     "
-    echo -e "██╔══██║ ██║╚██╗██║ ╚██╗ ██╔╝ ██║ ██║     "
-    echo -e "██║  ██║ ██║ ╚████║  ╚████╔╝  ██║ ███████╗"
-    echo -e "╚═╝  ╚═╝ ╚═╝  ╚═══╝   ╚═══╝   ╚═╝ ╚══════╝"
-
-    ANVIL_RPC="127.0.0.1:8545"
-    ANVIL_KEY="0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
-
-    CO1="forge create ${CONTRACT_PATH_CREATE} \
-        --rpc-url  ${ANVIL_RPC}\
-        --private-key ${ANVIL_KEY} \
-        --broadcast \
-        --out outz/"
-
-    echo -e "${BLUE}Running: $CO1${NC}"
-
-    # Run and log to file
-    eval "$CO1" 2>&1 | tee "$LOG_FILE"
-
-    echo -e "${GREEN}Successfully deployed contract${NC}"
-    echo -e "${YELLOW}Log saved to $LOG_FILE${NC}"
-}
-
-fo_create_anvil_nochain() {
-    hea1 "Foundry Create - One of contract deployment"
-
-    LOG_FILE="logs/deploy_create_avil.log"
-    mkdir -p logs
-
-    echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
-    echo -e "██╔══██╗ ████╗  ██║ ██║   ██║ ██║ ██║     "
-    echo -e "███████║ ██╔██╗ ██║ ██║   ██║ ██║ ██║     "
-    echo -e "██╔══██║ ██║╚██╗██║ ╚██╗ ██╔╝ ██║ ██║     "
-    echo -e "██║  ██║ ██║ ╚████║  ╚████╔╝  ██║ ███████╗"
-    echo -e "╚═╝  ╚═╝ ╚═╝  ╚═══╝   ╚═══╝   ╚═╝ ╚══════╝"
-
-    CO1="forge create ${CONTRACT_PATH_CREATE} \
-        --out outz/"
-
-    echo -e "${BLUE}Running: $CO1${NC}"
-
-    # Run and log to file
-    eval "$CO1" 2>&1 | tee "$LOG_FILE"
-
-    echo -e "${GREEN}Successfully deployed contract${NC}"
-    echo -e "${YELLOW}Log saved to $LOG_FILE${NC}"
-}
-
-###############################################
-# Forge Script
-################################################
-
-# Common Variables
-CONTRACT_PATH_SCRIPT="script/Counter.s.sol:CounterInteractor"
-
-fo_script_holeksy() {
-    hea1 "Foundry Script - One of contract deployment"
-
-    LOG_FILE="logs/deploy_script._holesky.log"
+    LOG_FILE="logs/interact_script._holesky.log"
 
     mkdir -p logs
 
