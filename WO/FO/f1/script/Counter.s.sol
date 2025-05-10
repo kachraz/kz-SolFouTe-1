@@ -24,7 +24,7 @@ contract CounterScript is Script {
 pragma solidity ^0.8.13;
 
 import "forge-std/Script.sol";
-import "../src/Counter.sol"; // Or wherever your Counter contract is located
+import "../src/work1/Counter.sol"; // Or wherever your Counter contract is located
 
 contract CounterInteractor is Script {
     function run() public {
