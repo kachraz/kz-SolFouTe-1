@@ -20,50 +20,6 @@ hea1() {
     echo -e "${CYAN}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${NC}"
 }
 
-foset() {
-    hea1 "Setup a foundry project, setup uv venv and install slither"
-    # Get name of Project
-    echo -e "Enter the name of the project: "
-    read name_of_project
-    if [ -z "$name_of_project" ]; then
-        echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
-        exit 1
-    fi
-
-    # Commands to execute
-    CO1="forge init --no-commit --no-git --force --vscode $name_of_project && cd $name_of_project "
-    CO2="uv venv && source venv/bin/activate.fish"
-    CO3="uv pip install slither-analyzer"
-    CO4="solc-select install 0.8.13 && solc-select use 0.8.13"
-
-    # Execution Commands
-    eval "$CO1"
-    eval "$CO2"
-    eval "$CO3"
-    eval "$CO4"
-
-    echo -e "${GREEN}Now run ${CO4}${NC}"
-}
-
-fo_only() {
-    hea1 "Setup a foundry project, setup uv venv and install slither"
-    # Get name of Project
-    echo -e "Enter the name of the project: "
-    read name_of_project
-    if [ -z "$name_of_project" ]; then
-        echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
-        exit 1
-    fi
-
-    # Commands to execute
-    CO1="forge init --no-commit --no-git --force --vscode $name_of_project && cd $name_of_project "
-
-    # Execution Commands
-    eval "$CO1"
-
-    echo -e "${GREEN}Foundry Only Install ${CO4}${NC}"
-}
-
 ######### Foundry Executions ############
 
 # Declare the rpc and key arrays
@@ -119,10 +75,10 @@ fo_script_interact_holeksy() {
     echo -e "${YELLOW}Log saved to $LOG_FILE${NC}"
 }
 
-fo_script_sepolia() {
+fo_script_interact_sepolia() {
     hea1 "Foundry Script - One of contract deployment"
 
-    LOG_FILE="logs/deploy_script_sepolia.log"
+    LOG_FILE="logs/interact_script_sepolia.log"
     mkdir -p logs
 
     echo -e "███████╗ ███████╗ ██████╗   ██████╗  ██╗      ██╗  █████╗ "
@@ -135,11 +91,7 @@ fo_script_sepolia() {
     CO1="forge script ${CONTRACT_PATH_SCRIPT} \
         --rpc-url ${rpcz[0]} \
         --private-key ${keyz[0]} \
-        --optimize true \
-        --optimizer-runs 999\
-        --build-info --build-info-path outz/ \
         --etherscan-api-key ${ETHERSCAN_API_KEY} \
-        --verify \
         --broadcast \
         --out outz/"
 
