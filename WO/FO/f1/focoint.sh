@@ -136,7 +136,7 @@ fo_script_interact_anvil() {
 
 fo_script_anvil_simulate() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/anvil_simulate_avil.log"
+    LOG_FILE="logs/anvil_simulate.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -167,10 +167,10 @@ main_menu() {
     echo -e "${CYAN}┌──────────────────────────────────────────┐${NC}"
     echo -e "${CYAN}│${NC}       ${PURPLE}🔥 Foundry Launcher Menu 🔥 ${CYAN}${NC}"
     echo -e "${CYAN}├──────────────────────────────────────────┤${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}8)${NC} ${WHITE}Interact Script Deploy on ${BLUE}Holesky${WHITE}         ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}9)${NC} ${WHITE}Intearct Script Deploy on ${BLUE}Sepolia${WHITE}         ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}10)${NC} ${WHITE}Interact Script Deploy on ${BLUE}Anvil${WHITE}         ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}11)${NC} ${WHITE}Simulate Deploy on ${BLUE}Anvil${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}1)${NC} ${WHITE}Interact Script Deploy on ${BLUE}Holesky${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}2)${NC} ${WHITE}Intearct Script Deploy on ${BLUE}Sepolia${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}3)${NC} ${WHITE}Interact Script Deploy on ${BLUE}Anvil${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}4)${NC} ${WHITE}Simulate Deploy on ${BLUE}Anvil${WHITE}         ${CYAN}${NC}"
     echo -e "${CYAN}│${NC}  ${RED}0)${NC} ${WHITE}Exit                                              ${CYAN}${NC}"
     echo -e "${CYAN}└──────────────────────────────────────────┘${NC}"
 
@@ -182,7 +182,6 @@ main_menu() {
     2) fo_script_interact_sepolia ;;
     3) fo_script_interact_anvil ;;
     4) fo_script_anvil_simulate ;;
-    5) fo_create_sepolia ;;
     0)
         echo -e "${GREEN}👋 Exiting. Have a productive dev sesh!${NC}"
         exit 0
