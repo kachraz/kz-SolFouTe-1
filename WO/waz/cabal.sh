@@ -26,8 +26,7 @@ cwb() {
     # --- Configuration ---
     # Wallet Addresses
     local -a wallets=(
-        "0x420A8Fe13265Df3B9323C3D7681b2854B1309338"
-        "0x420fFfdA7565D31e9b4b7ebAF0269b5564644656"
+        "0xA465600233997C758744d21ec8Bd0F5E84340e19"
     )
 
     # Network Configurations (Format: "NetworkName:RPC_URL")
