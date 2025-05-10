@@ -43,7 +43,7 @@ ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 # Forge interact
 ################################################
 
-CONTRACT_PATH_CREATE="src/Counter.sol:Counter"
+CONTRACT_PATH_SCRIPT="src/Counter.sol:Counter"
 
 fo_script_interact_holeksy() {
     hea1 "Forge script interact with contract"
@@ -180,8 +180,8 @@ main_menu() {
     case $choice in
     1) fo_script_interact_holeksy ;;
     2) fo_script_interact_sepolia ;;
-    3) fo ;;
-    4) fo_create_holeksy ;;
+    3) fo_script_interact_anvil ;;
+    4) fo_script_anvil_simulate ;;
     5) fo_create_sepolia ;;
     0)
         echo -e "${GREEN}👋 Exiting. Have a productive dev sesh!${NC}"
