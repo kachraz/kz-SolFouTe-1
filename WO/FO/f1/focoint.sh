@@ -134,7 +134,7 @@ fo_script_interact_anvil() {
     echo -e "${YELLOW}Log saved to $LOG_FILE${NC}"
 }
 
-fo_script_anvil_nochain() {
+fo_script_anvil_simulate() {
     hea1 "Foundry Script - One of contract deployment"
     LOG_FILE="logs/deploy_create_avil.log"
     mkdir -p logs
@@ -167,12 +167,10 @@ main_menu() {
     echo -e "${CYAN}┌──────────────────────────────────────────┐${NC}"
     echo -e "${CYAN}│${NC}       ${PURPLE}🔥 Foundry Launcher Menu 🔥 ${CYAN}${NC}"
     echo -e "${CYAN}├──────────────────────────────────────────┤${NC}"
-
-    echo -e "${CYAN}│${NC}  ${GREEN}7)${NC} ${WHITE}Create Contract on ${BLUE}Anvil-NoChain${WHITE}       ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}8)${NC} ${WHITE}Script Deploy on ${BLUE}Holesky${WHITE}         ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}9)${NC} ${WHITE}Script Deploy on ${BLUE}Sepolia${WHITE}         ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}10)${NC} ${WHITE}Script Deploy on ${BLUE}Anvil${WHITE}         ${CYAN}${NC}"
-    echo -e "${CYAN}│${NC}  ${GREEN}11)${NC} ${WHITE}Script Deploy on ${BLUE}Anvil-NoChain${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}8)${NC} ${WHITE}Interact Script Deploy on ${BLUE}Holesky${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}9)${NC} ${WHITE}Intearct Script Deploy on ${BLUE}Sepolia${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}10)${NC} ${WHITE}Interact Script Deploy on ${BLUE}Anvil${WHITE}         ${CYAN}${NC}"
+    echo -e "${CYAN}│${NC}  ${GREEN}11)${NC} ${WHITE}Simulate Deploy on ${BLUE}Anvil${WHITE}         ${CYAN}${NC}"
     echo -e "${CYAN}│${NC}  ${RED}0)${NC} ${WHITE}Exit                                              ${CYAN}${NC}"
     echo -e "${CYAN}└──────────────────────────────────────────┘${NC}"
 
@@ -180,17 +178,11 @@ main_menu() {
     read choice
 
     case $choice in
-    1) foset ;;
-    2) fo_only ;;
-    3) fo_test ;;
+    1) fo_script_interact_holeksy ;;
+    2) fo_script_interact_sepolia ;;
+    3) fo ;;
     4) fo_create_holeksy ;;
     5) fo_create_sepolia ;;
-    6) fo_create_anvil ;;
-    7) fo_create_anvil_nochain ;;
-    8) fo_script_holeksy ;;
-    9) fo_script_sepolia ;;
-    10) fo_script_anvil ;;
-    11) fo_script_anvil_nochain ;;
     0)
         echo -e "${GREEN}👋 Exiting. Have a productive dev sesh!${NC}"
         exit 0
