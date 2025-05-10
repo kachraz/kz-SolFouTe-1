@@ -20,12 +20,6 @@ contract CounterScript is Script {
 
 // Counter interaction script
 
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
-
-import "forge-std/Script.sol";
-import "../src/work1/Counter.sol"; // Or wherever your Counter contract is located
-
 contract CounterInteractor is Script {
     function run() public {
         // Start broadcasting transactions from the signer
