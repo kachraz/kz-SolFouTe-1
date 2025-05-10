@@ -106,11 +106,7 @@ fo_script_interact_holeksy() {
     CO1="forge script ${CONTRACT_PATH_SCRIPT} \
         --rpc-url ${rpcz[1]} \
         --private-key ${keyz[0]} \
-        --optimize true \
-        --optimizer-runs 999\
-        --build-info --build-info-path outz/ \
         --etherscan-api-key ${ETHERSCAN_API_KEY} \
-        --verify \
         --broadcast \
         --out outz/"
 
