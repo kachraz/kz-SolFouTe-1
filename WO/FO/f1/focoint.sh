@@ -106,7 +106,7 @@ fo_script_interact_sepolia() {
 
 fo_script_interact_anvil() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/deploy_create_avil.log"
+    LOG_FILE="logs/interact_script_avil.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
