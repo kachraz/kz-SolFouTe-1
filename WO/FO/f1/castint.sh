@@ -37,23 +37,28 @@ hea1() {
 # Actual cast intefcae function
 
 cast_int() {
-    h1 "Using cast interface to get the interface of a deployed contract"
+    hea1 "Using cast interface to get the interface of a deployed contract"
 
     local contract_address="${contracts[0]}"
-    local rpc_url="${networks[0]// /}" # trim any spaces
+    local rpc_url="${networks[0]// }"  # trim any extra spaces
     local output_file="IContract.sol"
-    local chain_id=11155111 # Sepolia chain ID (update if needed)
+    local chain_id=11155111  # Sepolia chain ID - change if needed
 
     echo -e "${YELLOW}Fetching interface for contract:${NC} $contract_address"
     echo -e "${YELLOW}Using RPC URL:${NC} $rpc_url"
 
-    # Run cast interface command with RPC URL
-    cast interface \
-        --rpc-url "$rpc_url" \
-        --chain "$chain_id" \
-        --output "$output_file" \
-        --pragma "^0.8.13" \
-        "$contract_address"
+    # Store the command as a string
+    local CMD="cast interface \
+        --rpc-url \"$rpc_url\" \
+        --chain \"$chain_id\" \
+        --output \"$output_file\" \
+        \"$contract_address\""
+
+    echo -e "${CYAN}Running command:${NC}"
+    echo -e "${BLUE}$CMD${NC}"
+
+    # Execute the command
+    eval "$CMD"
 
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}✅ Interface successfully saved to: $output_file${NC}"
@@ -62,12 +67,7 @@ cast_int() {
         echo -e "${CYAN}-------------------------${NC}"
     else
         echo -e "${RED}❌ Failed to fetch contract interface.${NC}"
-        echo -e "${RED}Possible issues:${NC}"
-        echo -e "  - Contract is not deployed at that address"
-        echo -e "  - RPC URL is incorrect or unreachable"
-        echo -e "  - Chain ID mismatch"
-        echo -e "  - Try using Etherscan API key instead (if verified)"
+        echo -e "${RED}Make sure the contract is deployed and RPC URL is correct.${NC}"
     fi
-}
-# Execute Functions
+}# Execute Functions
 cast_int
