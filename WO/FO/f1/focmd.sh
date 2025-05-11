@@ -134,6 +134,8 @@ fo_create_holeksy() {
 fo_create_sepolia() {
     hea1 "Foundry Create - One of contract deployment"
 
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
     LOG_FILE="logs/deploy_create_sepolia.log"
 
     mkdir -p logs
