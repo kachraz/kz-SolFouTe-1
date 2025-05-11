@@ -20,10 +20,13 @@ contracts=(
 
 ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
 
-# Network Configurations (Format: "NetworkName:RPC_URL")
 networks=(
     "https://eth-holesky.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx"
     "https://eth-sepolia.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx"
+)
+
+chainz=(
+    "11155111"
 )
 
 # Commands
@@ -40,9 +43,9 @@ cast_int() {
     hea1 "Using cast interface to get the interface of a deployed contract"
 
     local contract_address="${contracts[0]}"
-    local rpc_url="${networks[0]// }"  # trim any extra spaces
+    local rpc_url="${networks[0]// /}" # trim any extra spaces
     local output_file="IContract.sol"
-    local chain_id=11155111  # Sepolia chain ID - change if needed
+    local chain_id="${chainz[0]}" # Sepolia chain ID - change if needed
 
     echo -e "${YELLOW}Fetching interface for contract:${NC} $contract_address"
     echo -e "${YELLOW}Using RPC URL:${NC} $rpc_url"
@@ -69,5 +72,7 @@ cast_int() {
         echo -e "${RED}❌ Failed to fetch contract interface.${NC}"
         echo -e "${RED}Make sure the contract is deployed and RPC URL is correct.${NC}"
     fi
-}# Execute Functions
+}
+
+# Execute Functions
 cast_int
