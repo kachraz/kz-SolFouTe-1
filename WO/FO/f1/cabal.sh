@@ -15,20 +15,22 @@ export NC='\033[0m' # No Color
 # --- Config  ---
 
 # --- Configuration ---
-local -a wallets=(
+wallets=(
     "0xA465600233997C758744d21ec8Bd0F5E84340e19"
 )
 
-local -a rcvwallets=(
+rcvwallets=(
     "0xE987E28074D6E66D735Bb006ebbfe567350CB79d"
 )
 
-local -a keyz=(
+keyz=(
     "0x953d1aa8fae6d88b5df924bb68de806142527764160ede872925502a525bfad5"
 )
 
+ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
+
 # Network Configurations (Format: "NetworkName:RPC_URL")
-local -a networks=(
+networks=(
     "https://eth-sepolia.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx"
     "https://eth-holesky.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx"
 )
