@@ -99,7 +99,9 @@ Sepolia_DataFeed="0x694AA1769357215DE4FAC081bf1f309aDC325306"
 fo_create_holeksy() {
     hea1 "Foundry Create - One of contract deployment"
 
-    LOG_FILE="logs/deploy_create_holesky.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_holesky_${TIMESTAMP}.log"
+
     TOKEN_AMT="1000000000000000000000"
     mkdir -p logs
 
@@ -135,8 +137,7 @@ fo_create_sepolia() {
     hea1 "Foundry Create - One of contract deployment"
 
     TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-
-    LOG_FILE="logs/deploy_create_sepolia.log"
+    LOG_FILE="logs/deploy_create_sepolia_${TIMESTAMP}.log"
 
     mkdir -p logs
 
@@ -171,7 +172,8 @@ fo_create_sepolia() {
 fo_create_anvil() {
     hea1 "Foundry Create - One of contract deployment"
 
-    LOG_FILE="logs/deploy_create_avil.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -202,7 +204,9 @@ fo_create_anvil() {
 fo_create_anvil_nochain() {
     hea1 "Foundry Create - One of contract deployment"
 
-    LOG_FILE="logs/deploy_create_avil.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
+
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -234,7 +238,8 @@ CONTRACT_PATH_SCRIPT="script/Counter.s.sol:CounterScript"
 fo_script_holeksy() {
     hea1 "Foundry Script - One of contract deployment"
 
-    LOG_FILE="logs/deploy_script._holesky.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_script._holesky_${TIMESTAMP}.log"
 
     mkdir -p logs
 
@@ -268,7 +273,8 @@ fo_script_holeksy() {
 fo_script_sepolia() {
     hea1 "Foundry Script - One of contract deployment"
 
-    LOG_FILE="logs/deploy_script_sepolia.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_script_sepolia_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e "███████╗ ███████╗ ██████╗   ██████╗  ██╗      ██╗  █████╗ "
@@ -300,7 +306,9 @@ fo_script_sepolia() {
 
 fo_script_anvil() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/deploy_create_avil.log"
+
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -330,7 +338,9 @@ fo_script_anvil() {
 
 fo_script_anvil_nochain() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/deploy_create_avil.log"
+
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "

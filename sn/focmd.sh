@@ -72,13 +72,13 @@ rpcz=(
     "https://eth-holesky.g.alchemy.com/v2/y-cD2hUWMXwa6cAWy7uplLSSoRQ5v7Fx"
 )
 keyz=(
-    "0x6890220d6cc0218032cab963a528672d85643a2c7edf340de6e27861d1900958"
-    "0xff630bf91f95d3e7af70c12490b858cd5e0818b2bc6af6fccff9d933a1097bc4"
+    "0x953d1aa8fae6d88b5df924bb68de806142527764160ede872925502a525bfad5"
+    "0x425efe93a001f2a36fc824dc0418ccf9265c6373d64f57f6a06f1eb9751cef38"
 
 )
 accz=(
-    "0x420A8Fe13265Df3B9323C3D7681b2854B1309338"
-    "0x420fFfdA7565D31e9b4b7ebAF0269b5564644656"
+    "0xA465600233997C758744d21ec8Bd0F5E84340e19"
+    "0xAEcb6c012fa8E3947E8Ee76F4a4e06cC1410B6c9"
 
 )
 ETHERSCAN_API_KEY="2JEANQYC4C9S6PKDFWNGVT2UER24T32D2M"
@@ -93,12 +93,16 @@ fo_test() {
 ###############################################
 # Forge Create
 ################################################
-CONTRACT_PATH_CREATE="src/SimpleStorage.sol:SimpleStorage"
+CONTRACT_PATH_CREATE="src/Counter.sol:Counter"
+Sepolia_DataFeed="0x694AA1769357215DE4FAC081bf1f309aDC325306"
 
 fo_create_holeksy() {
     hea1 "Foundry Create - One of contract deployment"
 
-    LOG_FILE="logs/deploy_create_holesky.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_holesky_${TIMESTAMP}.log"
+
+    TOKEN_AMT="1000000000000000000000"
     mkdir -p logs
 
     echo -e "██╗  ██╗  ██████╗  ██╗      ███████╗ ███████╗ ██╗  ██╗ ██╗   ██╗"
@@ -108,7 +112,7 @@ fo_create_holeksy() {
     echo -e "██║  ██║ ╚██████╔╝ ███████╗ ███████╗ ███████║ ██║  ██╗    ██║   "
     echo -e "╚═╝  ╚═╝  ╚═════╝  ╚══════╝ ╚══════╝ ╚══════╝ ╚═╝  ╚═╝    ╚═╝   "
 
-    CO1="forge create ${CONTRACT_PATH_CREATE} \
+    CO1="forge create ${CONTRACT_PATH_CREATE}  \
         --rpc-url ${rpcz[1]} \
         --private-key ${keyz[0]} \
         --etherscan-api-key ${ETHERSCAN_API_KEY} \
@@ -116,7 +120,9 @@ fo_create_holeksy() {
         --optimizer-runs 999\
         --build-info --build-info-path outz/ \
         --verify --broadcast \
-        --out outz/"
+        --out outz/ \
+        --constructor-args ${Sepolia_DataFeed} \
+        -vvvv"
 
     echo -e "${BLUE}Running: $CO1${NC}"
 
@@ -130,7 +136,9 @@ fo_create_holeksy() {
 fo_create_sepolia() {
     hea1 "Foundry Create - One of contract deployment"
 
-    LOG_FILE="logs/deploy_create_sepolia.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_sepolia_${TIMESTAMP}.log"
+
     mkdir -p logs
 
     echo -e "███████╗ ███████╗ ██████╗   ██████╗  ██╗      ██╗  █████╗ "
@@ -148,7 +156,9 @@ fo_create_sepolia() {
         --build-info --build-info-path outz/ \
         --etherscan-api-key ${ETHERSCAN_API_KEY} \
         --verify --broadcast \
-        --out outz/"
+        --out outz/ \
+        --constructor-args ${Sepolia_DataFeed} \
+        -vvvvv"
 
     echo -e "${BLUE}Running: $CO1${NC}"
 
@@ -162,7 +172,8 @@ fo_create_sepolia() {
 fo_create_anvil() {
     hea1 "Foundry Create - One of contract deployment"
 
-    LOG_FILE="logs/deploy_create_avil.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -193,7 +204,9 @@ fo_create_anvil() {
 fo_create_anvil_nochain() {
     hea1 "Foundry Create - One of contract deployment"
 
-    LOG_FILE="logs/deploy_create_avil.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
+
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -220,12 +233,13 @@ fo_create_anvil_nochain() {
 ################################################
 
 # Common Variables
-CONTRACT_PATH_SCRIPT="script/DeploySimpleStorage.s.sol:DeploySimpleStorage"
+CONTRACT_PATH_SCRIPT="script/Counter.s.sol:CounterScript"
 
 fo_script_holeksy() {
     hea1 "Foundry Script - One of contract deployment"
 
-    LOG_FILE="logs/deploy_script._holesky.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_script._holesky_${TIMESTAMP}.log"
 
     mkdir -p logs
 
@@ -259,7 +273,8 @@ fo_script_holeksy() {
 fo_script_sepolia() {
     hea1 "Foundry Script - One of contract deployment"
 
-    LOG_FILE="logs/deploy_script_sepolia.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_script_sepolia_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e "███████╗ ███████╗ ██████╗   ██████╗  ██╗      ██╗  █████╗ "
@@ -291,7 +306,9 @@ fo_script_sepolia() {
 
 fo_script_anvil() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/deploy_create_avil.log"
+
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -321,7 +338,9 @@ fo_script_anvil() {
 
 fo_script_anvil_nochain() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/deploy_create_avil.log"
+
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/deploy_create_avil_${TIMESTAMP}.log"
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
