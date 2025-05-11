@@ -51,7 +51,7 @@ cast_int() {
     echo -e "${YELLOW}Using RPC URL:${NC} $rpc_url"
 
     # Store the command as a string
-    local CMD="cast interface \
+    local co1="cast interface \
         --rpc-url \"$rpc_url\" \
         --chain \"$chain_id\" \
         --output \"$output_file\" \
@@ -61,7 +61,7 @@ cast_int() {
     echo -e "${BLUE}$CMD${NC}"
 
     # Execute the command
-    eval "$CMD"
+    eval "$co1"
 
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}✅ Interface successfully saved to: $output_file${NC}"
