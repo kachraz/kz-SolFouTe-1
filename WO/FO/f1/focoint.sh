@@ -144,7 +144,7 @@ fo_script_anvil_simulate() {
     hea1 "Foundry Script - One of contract deployment"
 
     TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-    LOG_FILE="logs/interact_script_holesky_${TIMESTAMP}.log"
+    LOG_FILE="logs/interact_avil_simulate_${TIMESTAMP}.log"
 
     mkdir -p logs
 
