@@ -7,7 +7,7 @@ import {ICounter} from "../src/work1/IContract.sol";
 
 // Global Variables 
 
-address counterAddress = 0x32A22D4FE5d4ee9F9045F6ebc7834574b720FA78;
+address public constant COUNTER_ADDRESS = 0x32A22D4FE5d4ee9F9045F6ebc7834574b720FA78;
 
 contract CounterScript is Script {
     Counter public counter;
@@ -30,7 +30,7 @@ contract CounterInteractor is Script {
         // Start broadcasting transactions from the signer
         vm.startBroadcast();
 
-        Counter counter = Counter(counterAddress);
+        Counter counter = Counter(COUNTER_ADDRESS);
 
         // Read current number
         console.log("Current number:", counter.number());
@@ -59,7 +59,7 @@ contract CoInInt is Script {
         vm.startBroadcast();        
 
         // Cast the address to the interface
-        ICounter counter = ICounter(counterAddress);
+        ICounter counter = ICounter(COUNTER_ADDRESS);
 
         // 🔍 Read current value (view function - no transaction)
         uint256 current = counter.number();
