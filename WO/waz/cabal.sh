@@ -20,6 +20,7 @@ hea1() {
     echo -e "${CYAN}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${NC}"
 }
 
+# Cast Ballance Checking Function
 cwb() {
     # Define Colors
     RED='\033[0;31m'
@@ -123,14 +124,15 @@ cas() {
 
     # --- Configuration ---
     local -a wallets=(
-        "0x420A8Fe13265Df3B9323C3D7681b2854B1309338"
-        "0x420fFfdA7565D31e9b4b7ebAF0269b5564644656"
+        "0xA465600233997C758744d21ec8Bd0F5E84340e19"
+    )
+
+    local -a rcvwallets=(
+        "0xE987E28074D6E66D735Bb006ebbfe567350CB79d"
     )
 
     local -a keyz=(
-        "0x6890220d6cc0218032cab963a528672d85643a2c7edf340de6e27861d1900958"
-        "0xff630bf91f95d3e7af70c12490b858cd5e0818b2bc6af6fccff9d933a1097bc4"
-
+        "0x953d1aa8fae6d88b5df924bb68de806142527764160ede872925502a525bfad5"
     )
 
     # Network Configurations (Format: "NetworkName:RPC_URL")
@@ -140,11 +142,14 @@ cas() {
     )
 
     # --- AmountSend ---
-    local amount_send=0.01 # Amount to send in ETH
+    local amount_send=0.03 # Amount to send in ETH
 
-    CO1="cast send --rpc-url ${networks[0]} --private-key ${keyz[0]} ${wallets[1]} --value ${amount_send}ether"
+    CO1="cast send --rpc-url ${networks[1]}  \
+    --private-key ${keyz[0]} \
+    ${rcvwallets[0]} \
+    --value ${amount_send}ether"
 
-    echo -e "${GREEN}Sending ${amount_send} ETH from ${wallets[0]} to ${wallets[1]} on ${networks[0]}...${NC}"
+    echo -e "${GREEN}Sending ${amount_send} ETH from ${wallets[0]} to ${rcvwallets[0]} on ${networks[1]}...${NC}"
     send_output=$(eval "$CO1" 2>&1)
     if [ $? -ne 0 ]; then
         echo -e "${RED}Error: ${send_output}${NC}"

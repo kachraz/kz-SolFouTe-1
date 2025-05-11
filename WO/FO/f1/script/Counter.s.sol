@@ -26,7 +26,7 @@ contract CounterInteractor is Script {
         vm.startBroadcast();
 
         // Replace this with your actual deployed contract address
-        address counterAddress = 0x6EFb288e47fE258B055E82E319179338c12D5347;
+        address counterAddress = 0x3cEbFd06F1c6E372567E9A599b124c137550BdE2;
 
         Counter counter = Counter(counterAddress);
 
