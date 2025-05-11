@@ -26,7 +26,8 @@ networks=(
 )
 
 chainz=(
-    "11155111"
+    "11155111" #sepolia
+    "17000"    # holesky
 )
 
 # Commands
@@ -52,7 +53,7 @@ cast_int() {
 
     # Store the command as a string
     local co1="cast interface \
-        --rpc-url \"$rpc_url\" \
+        -e \"${ETHERSCAN_API_KEY}\" \
         --chain \"$chain_id\" \
         --output \"$output_file\" \
         \"$contract_address\""
