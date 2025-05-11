@@ -48,7 +48,8 @@ CONTRACT_PATH_SCRIPT="script/Counter.s.sol:CoInInt"
 fo_script_interact_holeksy() {
     hea1 "Forge script interact with contract"
 
-    LOG_FILE="logs/interact_script._holesky.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/interact_script_holesky_${TIMESTAMP}.log"
 
     mkdir -p logs
 
@@ -78,7 +79,9 @@ fo_script_interact_holeksy() {
 fo_script_interact_sepolia() {
     hea1 "Foundry Script - One of contract deployment"
 
-    LOG_FILE="logs/interact_script_sepolia.log"
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/interact_script_sepolia_${TIMESTAMP}.log"
+
     mkdir -p logs
 
     echo -e "███████╗ ███████╗ ██████╗   ██████╗  ██╗      ██╗  █████╗ "
@@ -106,7 +109,10 @@ fo_script_interact_sepolia() {
 
 fo_script_interact_anvil() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/interact_script_avil.log"
+
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/interact_script_anvil_${TIMESTAMP}.log"
+
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
@@ -136,7 +142,10 @@ fo_script_interact_anvil() {
 
 fo_script_anvil_simulate() {
     hea1 "Foundry Script - One of contract deployment"
-    LOG_FILE="logs/anvil_simulate.log"
+
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    LOG_FILE="logs/interact_script_holesky_${TIMESTAMP}.log"
+
     mkdir -p logs
 
     echo -e " █████╗  ███╗   ██╗ ██╗   ██╗ ██╗ ██╗     "
