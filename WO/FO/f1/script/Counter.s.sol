@@ -5,9 +5,9 @@ import {Script, console} from "forge-std/Script.sol";
 import {Counter} from "../src/work1/Counter.sol";
 import {ICounter} from "../src/work1/IContract.sol";
 
-// Global Variables 
+// Global Variables
 
-address public constant COUNTER_ADDRESS = 0x32A22D4FE5d4ee9F9045F6ebc7834574b720FA78;
+address constant COUNTER_ADDRESS = 0x32A22D4FE5d4ee9F9045F6ebc7834574b720FA78;
 
 contract CounterScript is Script {
     Counter public counter;
@@ -56,7 +56,7 @@ contract CounterInteractor is Script {
 contract CoInInt is Script {
     function run() public {
         // Start broadcasting transactions from the default signer
-        vm.startBroadcast();        
+        vm.startBroadcast();
 
         // Cast the address to the interface
         ICounter counter = ICounter(COUNTER_ADDRESS);
